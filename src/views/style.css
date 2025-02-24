@@ -1,0 +1,177 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+}
+
+:root {
+    --primary: #00d4ff;
+    --primary-dark: #00a8cc;
+    --secondary: #00ffaa;
+    --background: #0a0a0a;
+    --surface: #1c1c1c;
+    --text: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --error: #ff3366;
+    --success: #00ffaa;
+}
+
+/* Body styles */
+body {
+    background: linear-gradient(135deg, var(--background), var(--surface));
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    line-height: 1.6;
+}
+
+/* Header styles */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
+    animation: glow 2s ease-in-out infinite alternate;
+    font-weight: 800;
+}
+
+/* Input styles */
+.title-input,
+.description-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text);
+    transition: all 0.3s ease;
+    margin: 10px auto;
+    display: block;
+}
+
+.title-input:focus,
+.description-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.title-input::placeholder,
+.description-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
+}
+
+/* Button container styles */
+.containerbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Button styles */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--surface);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+}
+
+#get {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--text);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+/* Output container styles */
+.output {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Todo item styles */
+.todo-item {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+}
+
+/* Animations */
+@keyframes glow {
+    from { 
+        text-shadow: 0 0 15px var(--primary), 0 0 30px var(--primary);
+        transform: scale(1);
+    }
+    to { 
+        text-shadow: 0 0 25px var(--primary), 0 0 50px var(--primary);
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .containerbtn {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .title-input,
+    .description-input {
+        max-width: 300px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .title-input,
+    .description-input,
+    
+}
