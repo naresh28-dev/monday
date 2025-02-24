@@ -4,7 +4,7 @@ const getTodo= require('../controllers/getTodo.controller');
 const createTodo= require('../controllers/createTodo.controller');
 const updateTodo= require('../controllers/updateTodo.controller');
 const deleteTodo= require('../controllers/deletTodo.controller');
-const clean= require('../controllers/clean.controller');
+const clean= require('../controllers/clean.Controller');
 route.get('/', (req, res) => {
     res.send('Hello World!');
 }
